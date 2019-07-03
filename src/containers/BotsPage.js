@@ -25,17 +25,16 @@ class BotsPage extends React.Component {
     if(!this.state.armyBots.includes(bot)) {
       return this.setState( state => {
         state.armyBots.push(bot)
-        return state
+        return state 
       })
     }
   }
-  deleteBot = (bot => {
+  deleteBot = (bot) => {
     let newBots = [...this.state.armyBots]
     let index = newBots.indexOf(bot)
     if(index > -1 ) { newBots.splice(index, 1) }
     this.setState({ armyBots: newBots })
-  })
-    
+  } 
   render() {
     return (
       <div>
@@ -44,7 +43,6 @@ class BotsPage extends React.Component {
       </div>
     );
   }
-
 }
 
 export default BotsPage;
