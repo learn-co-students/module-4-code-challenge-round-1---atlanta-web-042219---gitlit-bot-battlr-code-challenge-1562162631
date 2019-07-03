@@ -24,7 +24,7 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => console.log("add code to connect event listener")}
+        onClick={ ()=> props.handleBotClick ? props.handleBotClick(bot) : props.delistBot(bot) }
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
@@ -43,11 +43,12 @@ const BotCard = props => {
             <i className="icon heartbeat" />
             {bot.health}
           </span>
-
+          &nbsp; | &nbsp;
           <span>
             <i className="icon lightning" />
             {bot.damage}
           </span>
+          &nbsp; | &nbsp;
           <span>
             <i className="icon shield" />
             {bot.armor}
